@@ -1,0 +1,12 @@
+[user]
+	name = Alessa L
+	email = 98236508+alessa-lara@users.noreply.github.com
+
+[core]
+	editor = nvim
+	pager = less -F
+	sshCommand = ssh -i /home/alessa/.local/ssh/alessa_ed25519
+[init]
+    defaultBranch = main
+[push]
+	autoSetupRemote = true
