@@ -78,7 +78,9 @@ layouts = [
     layout.Columns(
         border_focus='#ffffff', 
         border_normal='#000000', 
-        border_width=1),
+        border_width=1,
+        margin=5
+    ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),

@@ -1,0 +1,18 @@
+{
+	"C++ boilerplate": {
+		"isFileTemplate": true,
+		"prefix": "cppbp",
+		"body": [
+			"#include <iostream>",
+			"using namespace std;",
+			"",
+			"int main(int argc, char* argv[]) {",
+			"    setLocale(LC_ALL, \"portuguese\");",
+			"",
+			"    return 0;",
+			"}",
+			""
+		],
+		"description": "C++ boilerplate"
+	}
+}

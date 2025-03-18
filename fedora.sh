@@ -53,9 +53,6 @@ sudo dnf install -y \
 	celluloid \
 	mpv \
 	yt-dlp \
-	mpd \
-	mpc \
-	ncmpcpp \
 	htop \
 	libreoffice-gtk3 \
 	libreoffice-langpack-pt-BR \
@@ -86,6 +83,9 @@ sudo dnf install -y \
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install cross 
 sudo dnf install mingw32-gcc mingw64-gcc
+
+# Install pomodoro app
+cargo install timr-tui
 
 # Install AppImages
 wget -P $HOME/.local/bin/ https://mail.tutanota.com/desktop/tutanota-desktop-linux.AppImage
@@ -143,6 +143,12 @@ sudo cp $HOME/dotfiles/system/slick-greeter.conf /etc/lightdm/
 sudo cp $HOME/dotfiles/system/disable_usb_wakeup.conf /etc/tmpfiles.d/disable_usb_wakeup.conf
 sudo cp $HOME/dotfiles/system/sshd_config.d/01-local.conf /etc/ssh/sshd_config.d/
 sudo cp $HOME/dotfiles/system/ssh_config.d/01-local.conf /etc/ssh/ssh_config.d/
+sudo cp $HOME/dotfiles/system/udev/rules.d/50-nouveau-hwmon.rules /etc/udev/rules.d/
+
+# Install themes
+git clone https://github.com/vinceliuice/Orchis-theme.git
+Orchis-theme/install.sh -c dark -s compact --round 0
+rm -rdf Orchis-theme
 wget -qO- https://git.io/papirus-folders-install | env PREFIX=$HOME/.local sh
 papirus-folders -C white --theme Papirus-Dark
 

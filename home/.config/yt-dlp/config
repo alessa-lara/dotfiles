@@ -1,3 +1,7 @@
 --paths ~/Downloads/YT-DLP
 --write-subs
--f "271+bestaudio"
+-S "height:1080"
+-f "bestvideo+bestaudio"
+-o "%(title)s.%(ext)s"
+--cookies-from-browser firefox
+--embed-metadata

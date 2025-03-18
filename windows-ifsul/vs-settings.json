@@ -7,9 +7,6 @@
 
     "diffEditor.ignoreTrimWhitespace": false,
 
-    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
-    "editor.fontWeight": "500",
-    "editor.fontLigatures": true,
     "editor.lineHeight": 22,
     "editor.codeLens": false,
 
@@ -22,20 +19,8 @@
     "git.autofetch": true,
     "git.enableSmartCommit": true,
 
-    "gitlens.views.commitDetails.files.layout": "list",
-
-    "lldb.suppressUpdateNotifications": true,
-
-    "projectManager.git.baseFolders": ["~/Projects/"],
-
-    "sqltools.disableNodeDetectNotifications": true,
-    "sqltools.useNodeRuntime": true,
-
     "vim.smartRelativeLine": true,
-    "vim.enableNeovim": true,
     "vim.useSystemClipboard": true,
-    "vim.neovimPath": "/usr/bin/nvim",
-    "vim.neovimUseConfigFile": true,
 
     "workbench.colorTheme": "Monokai Night",
     "workbench.sideBar.location": "right"
