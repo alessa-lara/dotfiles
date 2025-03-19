@@ -7,19 +7,8 @@ sudo dnf install -y \
 sudo dnf group install -y --with-optional \
 	standard \
 	hardware-support \
-	c-development \
 	base-x \
 	multimedia
-
-# Install NVIDIA drivers
-while true; do
-    read -p "Do you wish to install NVIDIA drivers? " yn
-    case $yn in
-        [Yy]* ) sudo dnf install -y akmod-nvidia xorg-x11-drv-nvidia-cuda; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
 
 # Install media codecs
 sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
@@ -39,11 +28,10 @@ sudo dnf install -y \
 	picom \
 	rofi \
 	alacritty \
-	easyeffects \
-	torbrowser-launcher \
 	eom \
 	xfce4-screenshooter \
 	pcmanfm \
+    gvfs-mtp \
     lxmenu-data \
 	file-roller \
 	htop \
@@ -52,7 +40,6 @@ sudo dnf install -y \
 	libreoffice-writer \
 	git \
 	papirus-icon-theme \
-	gparted \
 	xfce4-session \
 	xfce4-settings \
 	xfconf \
@@ -65,24 +52,18 @@ sudo dnf install -y \
 	fish \
 	wpa_supplicant \
 	NetworkManager-wifi \
-	blueman
-
-# Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-# Install Qtile
-sudo dnf install -y \
-	python3-pip \
-	python3-xcffib \
-	python3-cffi \
-	python3-cairocffi
-pip install qtile
+	blueman \
+    qtile \
+    stow \
+    apvlv
 
 # Add flathub and install flatpaks
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak install -y bitwarden
-sudo flatpak install -y flathub org.mozilla.firefox
-sudo flatpak override --filesystem=xdg-data/themes
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install -y com.bitwarden.desktop \
+    com.google.Chrome \
+    org.mozilla.firefox \
+    dev.vencord.Vesktop
+flatpak override --filesystem=xdg-data/themes
 
 # Install VScode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -100,24 +81,21 @@ code --extensions-dir=.config/Code/Extensions --install-extension streetsidesoft
 code --extensions-dir=.config/Code/Extensions --install-extension Gruntfuggly.todo-tree
 code --extensions-dir=.config/Code/Extensions --install-extension eamodio.gitlens
 code --extensions-dir=.config/Code/Extensions --install-extension platformio.platformio-ide
-
-while true; do
-    read -p "Do you wish to instal remote development extensions" yn
-    case $yn in
-        [Yy]* ) code --extensions-dir=.config/Code/Extensions --install-extension ms-vscode-remote.remote-ssh; break;;
-        [Nn]* ) break;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+code --extensions-dir=.config/Code/Extensions --install-extension adpyke.codesnap
+code --extensions-dir=.config/Code/Extensions --install-extension ms-azuretools.vscode-docker
+code --extensions-dir=.config/Code/Extensions --install-extension ms-vscode.live-server
+code --extensions-dir=.config/Code/Extensions --install-extension alefragnani.project-manager
 
 # Install my configurations
-mkdir $HOME/Documents/Linux
-git --git-dir=$HOME/Documents/Linux/dotfiles --work-tree=$HOME init
-git --git-dir=$HOME/Documents/Linux/dotfiles --work-tree=$HOME config --local status.showUntrackedFiles no
-git --git-dir=$HOME/Documents/Linux/dotfiles --work-tree=$HOME pull https://github.com/Alessa-L/dotfiles
-sudo cp $HOME/Documents/Linux/slick-greeter.conf /etc/lightdm/
-sudo cp $HOME/Media/Images/Wallpaper.jpg /usr/share/backgrounds/
-sudo cp $HOME/Documents/Linux/disable_usb_wakeup.conf /etc/tmpfiles.d/disable_usb_wakeup.conf
+git clone git@github.com:alessa-lara/dotfiles.git
+stow -d $HOME/dotfiles/ -t $HOME/ --no-folding home
+sudo cp $HOME/dotfiles/home/Media/Images/Wallpaper.jpg /usr/share/backgrounds/
+sudo cp $HOME/dotfiles/system/slick-greeter.conf /etc/lightdm/
+
+# Install themes
+git clone https://github.com/vinceliuice/Orchis-theme.git
+Orchis-theme/install.sh -c dark -s compact --round 0
+rm -rdf Orchis-theme
 wget -qO- https://git.io/papirus-folders-install | env PREFIX=$HOME/.local sh
 papirus-folders -C white --theme Papirus-Dark
 
@@ -129,5 +107,9 @@ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client3_Command -t string -s
 
 # Change shell to FISH
 chsh -s /bin/fish
+
+# Remove unnecessary files from $HOME
+ls -a | grep bash | xargs -d "\n" rm
+rm -frd .wget-hsts .lesshst .python_history
 
 sudo systemctl set-default graphical.target

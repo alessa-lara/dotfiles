@@ -69,7 +69,6 @@ sudo dnf install -y \
 	xfce4-notifyd \
 	neovim \
 	flatpak \
-	discord \
 	xdg-user-dirs \
 	PackageKit-command-not-found \
 	fish \
@@ -77,7 +76,8 @@ sudo dnf install -y \
 	NetworkManager-wifi \
 	blueman \
     qtile \
-    stow
+    stow \
+    apvlv
 
 # Install Rust and Cross (Tool to easily cross-compile rust code via docker)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -91,10 +91,12 @@ cargo install timr-tui
 wget -P $HOME/.local/bin/ https://mail.tutanota.com/desktop/tutanota-desktop-linux.AppImage
 
 # Add flathub and install flatpaks
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-sudo flatpak install -y signal bitwarden
-sudo flatpak install -y flathub org.mozilla.firefox
-sudo flatpak override --filesystem=xdg-data/themes
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install -y com.bitwarden.desktop \
+    com.google.Chrome \
+    org.mozilla.firefox \
+    dev.vencord.Vesktop
+flatpak override --filesystem=xdg-data/themes
 
 # Install VScode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
