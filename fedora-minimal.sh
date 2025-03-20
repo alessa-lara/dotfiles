@@ -20,7 +20,7 @@ sudo dnf install -y \
 	slick-greeter \
 	light-locker \
 	lightdm \
-	polkit-gnome \
+	xfce-polkit \
 	gnome-keyring \
 	pavucontrol \
 	pulseaudio-utils \
@@ -58,12 +58,12 @@ sudo dnf install -y \
     apvlv
 
 # Add flathub and install flatpaks
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install -y com.bitwarden.desktop \
     com.google.Chrome \
     org.mozilla.firefox \
     dev.vencord.Vesktop
-flatpak override --filesystem=xdg-data/themes
+sudo flatpak override --filesystem=xdg-data/themes
 
 # Install VScode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -88,14 +88,14 @@ code --extensions-dir=.config/Code/Extensions --install-extension alefragnani.pr
 
 # Install my configurations
 git clone git@github.com:alessa-lara/dotfiles.git
-stow -d $HOME/dotfiles/ -t $HOME/ --no-folding home
+stow --verbose=2 -d $HOME/dotfiles/ -t $HOME/ --no-folding home
 sudo cp $HOME/dotfiles/home/Media/Images/Wallpaper.jpg /usr/share/backgrounds/
 sudo cp $HOME/dotfiles/system/slick-greeter.conf /etc/lightdm/
 
 # Install themes
 git clone https://github.com/vinceliuice/Orchis-theme.git
-Orchis-theme/install.sh -c dark -s compact --round 0
-rm -rdf Orchis-theme
+Orchis-theme/install.sh -d ~/.local/share/themes -c dark -s compact --round 0
+rm -rdfv Orchis-theme
 wget -qO- https://git.io/papirus-folders-install | env PREFIX=$HOME/.local sh
 papirus-folders -C white --theme Papirus-Dark
 
@@ -109,7 +109,6 @@ xfconf-query -c xfce4-session -p /sessions/Failsafe/Client3_Command -t string -s
 chsh -s /bin/fish
 
 # Remove unnecessary files from $HOME
-ls -a | grep bash | xargs -d "\n" rm
-rm -frd .wget-hsts .lesshst .python_history
+ls -a | grep bash | xargs -d "\n" rm -v
 
 sudo systemctl set-default graphical.target
