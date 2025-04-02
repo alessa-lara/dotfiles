@@ -46,5 +46,7 @@
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
 
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    
+    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, PointerAlignment: Left}"
 }
