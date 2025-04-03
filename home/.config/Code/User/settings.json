@@ -1,9 +1,13 @@
 {
+    "breadcrumbs.enabled": false,
+
     "codesnap.showWindowControls": false,
     "codesnap.containerPadding": "0",
 
     "cSpell.language": "en, pt, pt_BR",
     "cSpell.languageSettings": [ {"locale": "pt", "languageId": "*", "caseSensitive": false} ],
+
+    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, PointerAlignment: Left, IndentCaseLabels: true}",
 
     "diffEditor.ignoreTrimWhitespace": false,
 
@@ -45,8 +49,4 @@
     "window.menuBarVisibility": "hidden",
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
-
-    "breadcrumbs.enabled": false,
-    
-    "C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, IndentWidth: 4, PointerAlignment: Left}"
 }
