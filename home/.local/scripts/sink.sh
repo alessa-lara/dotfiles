@@ -22,8 +22,8 @@ done < <(pactl list short sinks)
 # Change sink and create a notification informing the switch
 if [ "$current_sink" = "$toggle1_sink" ]; then
     pactl set-default-sink "$toggle2_sink"
-    notify-send "Audio output changed to: HS70"
+    notify-send "Audio output changed to: $toggle2"
 else
     pactl set-default-sink "$toggle1_sink"
-    notify-send "Audio output changed to: HDMI"
+    notify-send "Audio output changed to: $toggle1"
 fi
