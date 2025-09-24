@@ -13,25 +13,50 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 dnf check-update
 sudo dnf install -y code
 code --extensions-dir=.config/Code/Extensions --install-extension fabiospampinato.vscode-monokai-night
-code --extensions-dir=.config/Code/Extensions --install-extension ms-vscode.cpptools
-code --extensions-dir=.config/Code/Extensions --install-extension llvm-vs-code-extensions.vscode-clangd
-code --extensions-dir=.config/Code/Extensions --install-extension rust-lang.rust-analyzer
-code --extensions-dir=.config/Code/Extensions --install-extension vadimcn.vscode-lldb
 code --extensions-dir=.config/Code/Extensions --install-extension aaron-bond.better-comments
 code --extensions-dir=.config/Code/Extensions --install-extension vscodevim.vim 
 code --extensions-dir=.config/Code/Extensions --install-extension streetsidesoftware.code-spell-checker
 code --extensions-dir=.config/Code/Extensions --install-extension streetsidesoftware.code-spell-checker-portuguese-brazilian
 code --extensions-dir=.config/Code/Extensions --install-extension Gruntfuggly.todo-tree
 code --extensions-dir=.config/Code/Extensions --install-extension adpyke.codesnap
-code --extensions-dir=.config/Code/Extensions --install-extension ms-azuretools.vscode-docker
+code --extensions-dir=.config/Code/Extensions --install-extension ms-azuretools.vscode-containers
 code --extensions-dir=.config/Code/Extensions --install-extension ms-vscode.live-server
 code --extensions-dir=.config/Code/Extensions --install-extension alefragnani.project-manager
 
 while true; do
-    read -p "Do you wish to instal remote development extensions" yn
+    read -p "Do you wish to instal C and C++ extensions: " yn
     case $yn in
-        [Yy]* ) code --extensions-dir=.config/Code/Extensions --install-extension ms-vscode-remote.remote-ssh; break;;
-        [Nn]* ) break;;
+        [Yy]* ) 
+            code --extensions-dir=.config/Code/Extensions --install-extension ms-vscode.cpptools;
+            code --extensions-dir=.config/Code/Extensions --install-extension llvm-vs-code-extensions.vscode-clangd;
+            code --extensions-dir=.config/Code/Extensions --install-extension ms-vscode.cmake-tools;
+            break;;
+        [Nn]* ) 
+            break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+while true; do
+    read -p "Do you wish to instal Rust extensions: " yn
+    case $yn in
+        [Yy]* ) 
+            code --extensions-dir=.config/Code/Extensions --install-extension rust-lang.rust-analyzer
+            break;;
+        [Nn]* ) 
+            break;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
+
+while true; do
+    read -p "Do you wish to instal remote development extensions: " yn
+    case $yn in
+        [Yy]* ) 
+            code --extensions-dir=.config/Code/Extensions --install-extension ms-vscode-remote.remote-ssh; 
+            break;;
+        [Nn]* ) 
+            break;;
         * ) echo "Please answer yes or no.";;
     esac
 done
