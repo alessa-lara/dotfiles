@@ -1,0 +1,58 @@
+{
+    "breadcrumbs.enabled": false,
+
+    "codesnap.showWindowControls": false,
+    "codesnap.containerPadding": "0",
+
+    "cSpell.language": "en, pt, pt_BR",
+    "cSpell.languageSettings": [ {"locale": "pt", "languageId": "*", "caseSensitive": false} ],
+
+    "C_Cpp.intelliSenseEngine": "disabled",
+
+    "diffEditor.ignoreTrimWhitespace": false,
+
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontWeight": "500",
+    "editor.fontLigatures": true,
+    "editor.lineHeight": 22,
+    "editor.codeLens": false,
+
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmPasteNative": false,
+    "explorer.confirmDelete": false,
+
+    "extensions.ignoreRecommendations": true,
+
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+
+    "gitlens.views.commitDetails.files.layout": "list",
+
+    "lldb.suppressUpdateNotifications": true,
+
+    "projectManager.git.baseFolders": ["~/Projects/"],
+
+    "sqltools.disableNodeDetectNotifications": true,
+    "sqltools.useNodeRuntime": true,
+
+    "vim.smartRelativeLine": true,
+    "vim.enableNeovim": true,
+    "vim.useSystemClipboard": true,
+    "vim.neovimUseConfigFile": true,
+    "workbench.activityBar.location": "top",
+
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+    "window.menuBarVisibility": "hidden",
+    "window.titleBarStyle": "native",
+    "window.customTitleBarVisibility": "never",
+    "workbench.sideBar.location": "right",
+    "svelte.enable-ts-plugin": true,
+    "docker.extension.enableComposeLanguageServer": false,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "workbench.colorTheme": "Monokai Night",
+}

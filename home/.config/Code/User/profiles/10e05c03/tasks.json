@@ -1,0 +1,49 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C++ Compile",
+            "type": "process",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${relativeFile}",
+                "-o",
+                "${relativeFileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": ""
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": "*.cpp"
+            }
+        },
+        {
+            "label": "C++ Run on external Terminal",
+            "type": "shell",
+            "command": "alacritty",
+            "args": [
+                "--working-directory",
+                "${relativeFileDirname}",
+                "-e",
+                "fish",
+                "-c",
+                {
+                    "value": "./${fileBasenameNoExtension}; read -p ''",
+                    "quoting": "weak"
+                }
+            ],
+            "dependsOn": "C++ Compile",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
