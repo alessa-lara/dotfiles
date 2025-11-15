@@ -1,0 +1,90 @@
+\documentclass{article}
+
+% Folha
+\usepackage[a4paper,top=3.5cm,left=3cm,right=3cm,bottom=2.5cm]{geometry}
+\flushbottom % Cada pagina tenha o mesmo tamanho de conteudo
+
+% Numeração das páginas no canto inferior direito
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[R]{\thepage}
+
+% Paragrafos
+\parindent 1.27cm
+\parskip   6pt
+
+% Fonte
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{microtype}
+
+% Itens de listas
+\usepackage{enumitem}
+\setlist{leftmargin=1.27cm, labelsep=0.5em, topsep=0pt, parsep=0pt, itemsep=0pt}
+
+% Compatibilidade pandoc
+\providecommand{\tightlist}
+
+% Imagens
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+% Secoes
+\usepackage{titlesec}
+
+\titleformat{\section}
+    {\normalfont\fontsize{12}{14}\bfseries\boldmath}
+    {\thesection.}
+    {1em}
+    {}
+    [\vspace{6pt}]
+
+\titlespacing*{\section}
+    {0pt}
+    {6pt}
+    {0pt plus 4pt minus 4pt}
+
+\titleformat{\subsection}
+    {\normalfont\fontsize{11}{13}\bfseries\boldmath}
+    {\thesubsection.}
+    {1em}
+    {}
+    [\vspace{6pt}]
+
+\titlespacing*{\subsection}
+    {0pt}
+    {6pt}
+    {0pt plus 4pt minus 4pt}
+
+% Texto
+\begin{document}
+    \noindent
+    $if(title)$
+        {\Large \bfseries $title$} \\[6pt]
+    $endif$
+    $if(author)$
+        {\large $author$} \\[6pt]
+    $endif$
+    $if(disciplina)$
+        {\large $disciplina$} \\[6pt]
+    $endif$
+    $if(professor)$
+        Professor: {\large $professor$} \\[6pt]
+    $endif$
+    $if(data)$
+        {\large $data$} \\[6pt]
+    $endif$ 
+
+    \noindent\makebox[\linewidth]{\rule{\textwidth}{0.4pt}} \\[6pt]
+
+    $body$
+\end{document} 
