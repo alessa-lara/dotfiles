@@ -43,10 +43,12 @@
 
     "workbench.colorTheme": "Monokai Night",
     "workbench.sideBar.location": "right",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
     "workbench.activityBar.location": "top",
 
     "window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
     "window.menuBarVisibility": "hidden",
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
+    "window.newWindowProfile": "Default",
 }
