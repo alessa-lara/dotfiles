@@ -36,4 +36,6 @@ if status is-interactive
     alias "cross-windows"="cross build --target x86_64-pc-windows-gnu --verbose"
     alias "update"="sudo dnf upgrade && flatpak update"
     alias "pg-db"="sudo -u postgres createdb --owner=alessa"
+    alias "dcu"="docker compose up -d"
+    alias "minefriends"="docker compose -f ~/minecraft/server-modded-friends/compose.yaml up -d"
 end

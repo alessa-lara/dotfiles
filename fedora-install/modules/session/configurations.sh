@@ -1,4 +1,3 @@
-git clone git@github.com:alessa-lara/dotfiles.git
 stow --verbose=2 -d $HOME/dotfiles/ -t $HOME/ --no-folding home
 sudo cp $HOME/dotfiles/home/Media/Images/Wallpaper.jpg /usr/share/backgrounds/
 sudo cp $HOME/dotfiles/system/slick-greeter.conf /etc/lightdm/
