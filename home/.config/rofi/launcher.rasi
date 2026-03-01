@@ -33,6 +33,7 @@ configuration {
 
 window {
   transparency: "real";
+  width: 40%;
 }
 
 mainbox {
