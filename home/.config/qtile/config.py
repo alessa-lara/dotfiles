@@ -89,7 +89,9 @@ layouts = [
         border_focus='#ffffff', 
         border_normal='#000000', 
         border_width=1,
-        margin=5
+        margin=5,
+        initial_ratio=1.1,
+        insert_position=1,
     ),
     layout.Max(),
     # Try more layouts by unleashing below layouts.
