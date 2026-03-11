@@ -3,3 +3,6 @@ IndentWidth: 4
 PointerAlignment: Left
 IndentCaseLabels: true
 ColumnLimit: 0
+SpacesInParens: Custom
+SpacesInParensOptions:
+  InConditionalStatements: true
