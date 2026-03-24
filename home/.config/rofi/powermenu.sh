@@ -19,7 +19,7 @@ options="$suspend\n$shutdown\n$reboot\n$lock\n$logout"
 chosen="$(echo -e "$options" | $rofi_command -dmenu)"
 case $chosen in
     $suspend)
-		xfce4-session-logout --suspend
+		systemctl suspend
         ;;
     $shutdown)
 		systemctl poweroff
