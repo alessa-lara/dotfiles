@@ -31,7 +31,7 @@ case $chosen in
 		dm-tool lock
         ;;
     $logout)
-		xfce4-session-logout --logout --fast
+        loginctl terminate-session $XDG_SESSION_ID
         ;;
 esac
 
