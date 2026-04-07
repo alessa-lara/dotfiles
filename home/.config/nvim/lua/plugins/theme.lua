@@ -1,27 +1,18 @@
 return {
   {
-    "ray-x/starry.nvim",
-    version = "*",
-
-    opts = {
-      border = false,
-      disable = {
-        background = true,
-      },
-
-      style = {
-        disable = {
-          "underdouble",
-          "undercurl",
-        },
-      },
-    },
+    "sainnhe/sonokai",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.sonokai_style = "maia"
+      vim.g.sonokai_transparent_background = "1"
+    end,
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai",
+      colorscheme = "sonokai",
     },
   },
 }
