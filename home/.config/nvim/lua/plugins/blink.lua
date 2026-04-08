@@ -1,7 +1,9 @@
 return {
     "saghen/blink.cmp",
     opts = {
-        documentation = { auto_show = false },
+        completion = {
+            documentation = { auto_show = false },
+        },
         keymap = {
             preset = "default",
             ["<S-Tab>"] = { "select_prev", "fallback" },
