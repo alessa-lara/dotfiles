@@ -2,6 +2,7 @@ return {
     {
         "y3owk1n/undo-glow.nvim",
         version = "*",
+        lazy = true,
         opts = {
             animation = {
                 enabled = true,

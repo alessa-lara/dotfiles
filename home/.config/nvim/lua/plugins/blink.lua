@@ -10,5 +10,8 @@ return {
             ["<Tab>"] = { "select_next", "fallback" },
             ["<CR>"] = { "select_and_accept", "fallback" },
         },
+        sources = {
+            default = { "lsp", "path", "snippets" },
+        },
     },
 }
