@@ -51,18 +51,19 @@ map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 map("x", "<", "<gv")
 map("x", ">", ">gv")
 
--- new file
-map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
+-- file
+map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "[N]ew File" })
+map("n", "<leader>fq", "<cmd>:wqa<cr>", { desc = "[Q]uit" })
 
 -- diagnostic
 local diagnostic_goto = function(next, severity)
-    return function()
-        vim.diagnostic.jump({
-            count = (next and 1 or -1) * vim.v.count1,
-            severity = severity and vim.diagnostic.severity[severity] or nil,
-            float = true,
-        })
-    end
+	return function()
+		vim.diagnostic.jump({
+			count = (next and 1 or -1) * vim.v.count1,
+			severity = severity and vim.diagnostic.severity[severity] or nil,
+			float = true,
+		})
+	end
 end
 map("n", "<leader>cl", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
