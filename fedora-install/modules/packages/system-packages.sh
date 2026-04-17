@@ -31,7 +31,7 @@ sudo dnf install -y \
   blueman \
   qtile \
   stow \
-  mupdf \
+  evince \
   xfce4-session \
   xfce4-settings \
   xfconf \
