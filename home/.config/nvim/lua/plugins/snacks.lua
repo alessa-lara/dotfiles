@@ -21,6 +21,7 @@ return {
 			statuscolumn = { enabled = true },
 			words = { enabled = true },
 			terminal = { enabled = true },
+			toggle = { enabled = true },
 		},
 		keys = {
 			{
@@ -85,6 +86,20 @@ return {
 					Snacks.picker.notifications()
 				end,
 				desc = "[N]otification History",
+			},
+			{
+				"<leader>ow",
+				function()
+					Snacks.toggle.option("wrap", { name = "Wrap" }):toggle()
+				end,
+				desc = "[W]rap",
+			},
+			{
+				"<leader>od",
+				function()
+					Snacks.toggle.dim():toggle()
+				end,
+				desc = "[D]im",
 			},
 		},
 	},
