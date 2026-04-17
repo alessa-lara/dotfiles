@@ -86,12 +86,35 @@ return {
 		"nvim-mini/mini.statusline",
 		opts = {
 			use_icons = vim.g.have_nerd_font,
+			content = {
+				active = function()
+					local orange = vim.api.nvim_get_hl(0, { name = "Orange" }).fg
+					local purple = vim.api.nvim_get_hl(0, { name = "Purple" }).fg
+
+					vim.api.nvim_set_hl(0, "StatuslineGit", { fg = "#181A1C", bg = orange, bold = true })
+					vim.api.nvim_set_hl(0, "StatuslineRoot", { fg = "#181A1C", bg = purple, bold = true })
+
+					local mode, mode_hl = MiniStatusline.section_mode({})
+					local git = MiniStatusline.section_git({})
+
+					local root = MiniMisc.find_root()
+					if root == nil then
+						root = vim.fn.expand("%:p:h")
+					end
+					root = root:gsub("^" .. (os.getenv("HOME") or ""), "")
+
+					local buf_location = "L:%l|%L│C:%v"
+
+					return MiniStatusline.combine_groups({
+						{ hl = mode_hl, strings = { mode } },
+						{ hl = "StatuslineGit", strings = { git } },
+						{ hl = "StatuslineRoot", strings = { root } },
+						"%=",
+						{ hl = mode_hl, strings = { buf_location } },
+					})
+				end,
+			},
 		},
-		config = function()
-			require("mini.statusline").section_location = function()
-				return "%2l:%-2v"
-			end
-		end,
 	},
 
 	{ "nvim-mini/mini.tabline", opts = {} },
