@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-mini/mini.keymap",
+		lazy = false,
 		opts = function(_, opts)
 			local map_multistep = require("mini.keymap").map_multistep
 
@@ -30,6 +31,7 @@ return {
 
 	{
 		"nvim-mini/mini.misc",
+		lazy = false,
 		opts = function(_, opts)
 			require("mini.misc").setup_auto_root({
 				".git",
@@ -43,10 +45,11 @@ return {
 		end,
 	},
 
-	{ "nvim-mini/mini.pairs", opts = {} },
+	{ "nvim-mini/mini.pairs", lazy = false, opts = {} },
 
 	{
 		"nvim-mini/mini.comment",
+		lazy = false,
 		opts = {
 			mappings = {
 				comment_line = "<leader>ec",
@@ -57,12 +60,13 @@ return {
 
 	{ "nvim-mini/mini.ai", opts = {} },
 
-	{ "nvim-mini/mini.hipatterns", opts = {} },
+	{ "nvim-mini/mini.hipatterns", lazy = false, opts = {} },
 
-	{ "nvim-mini/mini.icons", opts = {} },
+	{ "nvim-mini/mini.icons", lazy = false, opts = {} },
 
 	{
 		"nvim-mini/mini.animate",
+		lazy = false,
 		opts = function(_, opts)
 			local animate = require("mini.animate")
 			return vim.tbl_deep_extend("force", opts, {
@@ -84,6 +88,7 @@ return {
 
 	{
 		"nvim-mini/mini.statusline",
+		lazy = false,
 		opts = {
 			use_icons = vim.g.have_nerd_font,
 			content = {
@@ -117,11 +122,12 @@ return {
 		},
 	},
 
-	{ "nvim-mini/mini.tabline", opts = {} },
+	{ "nvim-mini/mini.tabline", lazy = false, opts = {} },
 
 	{
 		"nvim-mini/mini.surround",
-		opts = {
+		lazy = false,
+		opt = {
 			mappings = {
 				add = "<leader>esa", -- Add surrounding in Normal and Visual modes
 				delete = "<leader>esd", -- Delete surrounding

@@ -1,6 +1,7 @@
 return {
-    {
-        "HiPhish/rainbow-delimiters.nvim",
-        version = "*",
-    },
+	{
+		"HiPhish/rainbow-delimiters.nvim",
+		version = "*",
+		lazy = false,
+	},
 }

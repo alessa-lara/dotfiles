@@ -1,6 +1,7 @@
 return {
 	"saghen/blink.cmp",
 	version = not vim.g.lazyvim_blink_main and "*",
+    event = { "InsertEnter", "CmdlineEnter" },
 	opts = {
 		fuzzy = { implementation = "lua" },
 

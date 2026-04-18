@@ -1,9 +1,14 @@
 return {
-    {
-        "folke/flash.nvim",
-        opts = {
-            search = { mode = "fuzzy" },
-            modes = { search = { enabled = true } },
-        },
-    },
+	"folke/flash.nvim",
+	lazy = false,
+	opts = {
+		search = {
+			mode = "fuzzy",
+		},
+		modes = {
+			search = {
+				enabled = true,
+			},
+		},
+	},
 }
