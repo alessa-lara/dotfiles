@@ -43,3 +43,5 @@ vim.diagnostic.config({
 vim.o.expandtab = true
 vim.opt.shiftwidth = 4
 vim.o.tabstop = 4
+
+vim.opt.linebreak = true
