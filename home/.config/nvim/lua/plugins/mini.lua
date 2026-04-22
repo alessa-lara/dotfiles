@@ -127,7 +127,7 @@ return {
 	{
 		"nvim-mini/mini.surround",
 		lazy = false,
-		opt = {
+		opts = {
 			mappings = {
 				add = "<leader>esa", -- Add surrounding in Normal and Visual modes
 				delete = "<leader>esd", -- Delete surrounding
