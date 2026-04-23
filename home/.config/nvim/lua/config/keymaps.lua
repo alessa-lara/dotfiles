@@ -73,7 +73,8 @@ map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
 
-map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
+map("n", "<leader>wd", "<C-W>c", { desc = "[D]elete Window", remap = true })
+map("n", "<leader>ws", "<C-W>v", { desc = "[S]plit Window Right", remap = true })
 
 -- lsp
 map("n", "<space>cd", vim.lsp.buf.definition, { desc = "Go to definition" })
@@ -86,3 +87,6 @@ map("n", "<space>ct", vim.lsp.buf.type_definition, { desc = "Go to type definiti
 
 map("n", "<leader>eu", "gu", { desc = "Make lowercase (operator)" })
 map("n", "<leader>eU", "gU", { desc = "Make uppercase (operator)" })
+
+map("n", "<leader>bp", "<cmd>bprevious<cr>", { desc = "[P]revious Buffer" })
+map("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "[N]ext Buffer" })
