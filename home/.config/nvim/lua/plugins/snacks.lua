@@ -25,6 +25,24 @@ return {
 		},
 		keys = {
 			{
+				"<leader>s",
+				function()
+					local file = vim.api.nvim_buf_get_name(0)
+					print(file)
+					Snacks.picker.grep({
+						finder = "grep",
+						format = "file",
+						live = true,
+						supports_live = true,
+						buffers = true,
+						regex = true,
+						show_empty = true,
+						glob = file,
+					})
+				end,
+				desc = "[S]earch on buffer",
+			},
+			{
 				"<leader>h",
 				function()
 					Snacks.dashboard()
