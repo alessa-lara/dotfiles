@@ -80,7 +80,17 @@ return {
 			{
 				"<leader>fp",
 				function()
-					Snacks.picker.projects()
+					Snacks.picker.projects({
+						dev = {
+							"~/Projects/Rust",
+							"~/Projects/C++",
+							"~/Projects/Python",
+							"~/Projects/Web",
+							"~/Documents/Markdown",
+						},
+						patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "package.json", "Makefile", ".root" },
+						recent = false,
+					})
 				end,
 				desc = "[P]rojects",
 			},
