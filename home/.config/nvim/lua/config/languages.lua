@@ -35,4 +35,7 @@ return {
 	postgresql = {
 		lsp = "postgres-language-server",
 	},
+	markdown = {
+		lsp = "markdown_oxide",
+	},
 }
