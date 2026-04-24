@@ -44,4 +44,8 @@ vim.o.expandtab = true
 vim.opt.shiftwidth = 4
 vim.o.tabstop = 4
 
+-- wrap
+vim.opt.wrap = false
 vim.opt.linebreak = true
+-- when entering a new line on wrap, keep the indentation
+vim.o.breakindent = true
