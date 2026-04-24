@@ -49,3 +49,22 @@ vim.opt.wrap = false
 vim.opt.linebreak = true
 -- when entering a new line on wrap, keep the indentation
 vim.o.breakindent = true
+
+vim.opt.colorcolumn = { 100, 120 }
+
+-- Configure how new splits should be opened
+vim.o.splitright = true
+vim.o.splitbelow = true
+
+-- Sets how neovim will display certain whitespace characters in the editor.
+vim.o.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.o.scrolloff = 10
+
+-- keep a column for lsp, git, breakpoints, etc, even when not needed
+vim.o.signcolumn = "yes"
+
+vim.o.updatetime = 250
+vim.o.timeoutlen = 300
