@@ -116,6 +116,13 @@ return {
 				desc = "[N]otification History",
 			},
 			{
+				"<leader>ow",
+				function()
+					Snacks.toggle.option("wrap", { name = "Wrap" }):toggle()
+				end,
+				desc = "[W]rap",
+			},
+			{
 				"<leader>od",
 				function()
 					Snacks.toggle.dim():toggle()

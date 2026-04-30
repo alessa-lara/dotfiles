@@ -65,28 +65,6 @@ return {
 	{ "nvim-mini/mini.icons", lazy = false, opts = {} },
 
 	{
-		"nvim-mini/mini.animate",
-		lazy = false,
-		opts = function(_, opts)
-			local animate = require("mini.animate")
-			return vim.tbl_deep_extend("force", opts, {
-				resize = {
-					timing = animate.gen_timing.linear({ duration = 25, unit = "total" }),
-				},
-				scroll = {
-					timing = animate.gen_timing.linear({ duration = 75, unit = "total" }),
-					-- optional: disable subscroll for single-line jumps (just a nice tweak)
-					subscroll = animate.gen_subscroll.equal({
-						predicate = function(total_scroll)
-							return total_scroll > 1
-						end,
-					}),
-				},
-			})
-		end,
-	},
-
-	{
 		"nvim-mini/mini.statusline",
 		lazy = false,
 		opts = {

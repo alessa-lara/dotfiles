@@ -38,4 +38,7 @@ return {
 	markdown = {
 		lsp = "markdown_oxide",
 	},
+	assembly = {
+		lsp = "asm-lsp",
+	},
 }
