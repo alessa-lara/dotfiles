@@ -14,4 +14,21 @@ return {
 			end,
 		},
 	},
+
+	{
+		"NeogitOrg/neogit",
+		dependencies = {
+			"sindrets/diffview.nvim", -- optional
+		},
+		cmd = "Neogit",
+		keys = {
+			{
+				"<leader>gg",
+				function()
+					require("neogit").open({ kind = "floating" })
+				end,
+				desc = "Show Neogit UI",
+			},
+		},
+	},
 }
