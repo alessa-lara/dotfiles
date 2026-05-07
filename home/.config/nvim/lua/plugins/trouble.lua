@@ -10,12 +10,12 @@ return {
 			},
 		},
 		keys = {
-			-- { "<leader>wD", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
-			-- { "<leader>wD", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics (Trouble)" },
-			-- { "<leader>ws", "<cmd>Trouble symbols toggle<cr>", desc = "Symbols (Trouble)" },
+			{ "<leader>wD", "<cmd>Trouble diagnostics toggle<cr>", desc = "[D]iagnostics Window" },
+			{ "<leader>wD", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "Buffer Diagnostics Window" },
+			{ "<leader>wS", "<cmd>Trouble symbols toggle<cr>", desc = "[S]ymbols Window" },
 			-- { "<leader>wS", "<cmd>Trouble lsp toggle<cr>", desc = "LSP references/definitions/... (Trouble)" },
-			-- { "<leader>wl", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
-			-- { "<leader>wq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
+			{ "<leader>wl", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
+			{ "<leader>wq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
 			{
 				"[q",
 				function()
