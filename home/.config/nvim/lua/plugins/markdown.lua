@@ -12,8 +12,20 @@ return {
 			desc = "[R]ender Markdown",
 		},
 	},
+
 	{
-		"yousefhadder/markdown-plus.nvim",
+		"obsidian-nvim/obsidian.nvim",
+		ft = "markdown",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			workspaces = {
+				{ name = "computer-science-notes", path = "~/Documents/Markdown/comp-sci-notes/" },
+			},
+		},
+	},
+
+	{
+		"tadmccorkle/markdown.nvim",
 		ft = "markdown",
 		opts = {},
 	},
