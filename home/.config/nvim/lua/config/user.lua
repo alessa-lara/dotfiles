@@ -69,5 +69,5 @@ vim.o.signcolumn = "yes"
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
-vim.o.backupdir = "~/.local/vim/tmp"
-vim.o.directory = "~/.local/vim/swp"
+vim.o.backupdir = ".vim/tmp"
+vim.o.directory = ".vim/swp"

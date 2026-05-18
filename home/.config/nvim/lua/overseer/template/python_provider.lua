@@ -9,7 +9,7 @@ return {
 				builder = function()
 					return {
 						cmd = { "python", "main.py" },
-						components = { "default", { "on_output_quickfix", open = true } },
+						components = { "default", { "on_output_quickfix", errorformat = vim.o.errorformat } },
 					}
 				end,
 			})
@@ -23,7 +23,7 @@ return {
 				builder = function()
 					return {
 						cmd = { "python", rel_path },
-						components = { "default", { "on_output_quickfix", open = true } },
+						components = { "default", { "on_output_quickfix", errorformat = vim.o.errorformat } },
 					}
 				end,
 			})
