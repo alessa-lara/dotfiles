@@ -8,7 +8,7 @@ return {
 			dashboard = { enabled = true },
 			dim = { enabled = true },
 			explorer = { enabled = true },
-			indent = { enabled = true },
+			indent = { enabled = true, chunk = { enabled = true } },
 			input = { enabled = true },
 			notifier = {
 				enabled = true,
@@ -16,7 +16,7 @@ return {
 			},
 			picker = { enabled = true, sources = { explorer = { layout = { layout = { position = "right" } } } } },
 			quickfile = { enabled = true },
-			scope = { enabled = true },
+			scope = { enabled = true, cursor = false },
 			scroll = { enabled = true },
 			statuscolumn = { enabled = true },
 			words = { enabled = true },
