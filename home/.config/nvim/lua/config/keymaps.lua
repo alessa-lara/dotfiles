@@ -90,3 +90,15 @@ map("n", "<leader>eU", "gU", { desc = "Make uppercase (operator)" })
 
 map("n", "<leader>bp", "<cmd>bprevious<cr>", { desc = "[P]revious Buffer" })
 map("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "[N]ext Buffer" })
+
+map("n", "<leader>o", function()
+	local repeated = vim.fn["repeat"]({ "" }, vim.v.count1)
+	local line = vim.api.nvim_win_get_cursor(0)[1]
+	vim.api.nvim_buf_set_lines(0, line, line, true, repeated)
+end)
+
+map("n", "<leader>O", function()
+	local repeated = vim.fn["repeat"]({ "" }, vim.v.count1)
+	local line = vim.api.nvim_win_get_cursor(0)[1]
+	vim.api.nvim_buf_set_lines(0, line - 1, line - 1, true, repeated)
+end)
