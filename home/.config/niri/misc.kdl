@@ -1,0 +1,28 @@
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+input {
+    focus-follows-mouse max-scroll-amount="33%"
+
+    keyboard {
+        xkb {
+            layout "br, us"
+
+            variant "abnt2"
+
+            model "abnt2"
+        }
+        // Enable numlock on startup, omitting this setting disables it.
+        numlock
+    }
+
+    touchpad {
+        tap
+        click-method "clickfinger"
+        accel-profile "flat"
+    }
+
+    mouse {
+        accel-profile "flat"
+    }
+}
+

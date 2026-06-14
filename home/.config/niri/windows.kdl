@@ -1,0 +1,40 @@
+// Disable client-side decorations
+prefer-no-csd
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    match app-id=r"firefox$" title="^Picture-in-Picture$"
+    open-floating true
+}
+
+animations {
+    slowdown 0.8
+}
+
+layout {
+    gaps 15
+
+    center-focused-column "never"
+
+    preset-column-widths {
+        // Proportion sets the width as a fraction of the output width, taking gaps into account.
+        proportion 0.4
+        proportion 0.5
+        proportion 0.6
+    }
+
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+            off
+    }
+
+    border {
+            on
+
+            width 5
+
+            active-color "#7fc8ff"
+            inactive-color "#505050"
+    }
+}
