@@ -71,3 +71,5 @@ vim.o.timeoutlen = 300
 
 vim.o.backupdir = ".vim/tmp"
 vim.o.directory = ".vim/swp"
+
+vim.o.cursorline = true
