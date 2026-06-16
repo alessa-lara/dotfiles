@@ -7,4 +7,4 @@ include "windows.kdl"
 
 // startup
 spawn-at-startup "qs" "-c" "noctalia-shell"
-spawn-at-startup "flatpak" "run" "com.bitwarden.desktop"
+spawn-at-startup "flatpak" "run" "com.bitwarden.desktop" "--autostart"
