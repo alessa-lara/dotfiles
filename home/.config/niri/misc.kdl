@@ -24,6 +24,10 @@ input {
     mouse {
         accel-profile "flat"
     }
+
+    tablet {
+        left-handed
+    }
 }
 
 switch-events {
