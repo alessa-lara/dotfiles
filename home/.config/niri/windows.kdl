@@ -15,6 +15,7 @@ layout {
     gaps 15
 
     center-focused-column "never"
+    always-center-single-column
 
     preset-column-widths {
         // Proportion sets the width as a fraction of the output width, taking gaps into account.
@@ -23,18 +24,18 @@ layout {
         proportion 0.6
     }
 
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 1.0; }
 
     focus-ring {
-            off
+        off
     }
 
     border {
-            on
+        on
 
-            width 2
+        width 2
 
-            active-color "#7fc8ff"
-            inactive-color "#505050"
+        active-color "#7fc8ff"
+        inactive-color "#505050"
     }
 }
