@@ -21,6 +21,7 @@ return {
 			workspaces = {
 				{ name = "computer-science-notes", path = "~/Documents/Markdown/comp-sci-notes/" },
 			},
+            legacy_commands = false
 		},
 	},
 
