@@ -38,4 +38,6 @@ if status is-interactive
     alias "pg-db"="sudo -u postgres createdb --owner=alessa"
     alias "dcu"="docker compose up -d"
     alias "minefriends"="docker compose -f ~/minecraft/server-modded-friends/compose.yaml up -d"
+    alias "nix-rebuild-desktop"="sudo nixos-rebuild switch --flake $HOME/nix#desktop"
+    alias "nix-rebuild-laptop"="sudo nixos-rebuild switch --flake $HOME/nix#laptop"
 end
