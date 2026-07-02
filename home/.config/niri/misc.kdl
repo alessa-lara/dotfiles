@@ -10,6 +10,8 @@ input {
             variant "abnt2"
 
             model "abnt2"
+
+            options "grp:win_space_toggle,ctrl:nocaps" // switch layout via mod+space
         }
         // Enable numlock on startup, omitting this setting disables it.
         numlock
