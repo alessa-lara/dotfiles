@@ -8,10 +8,6 @@ return {
 			-- Required dependency for nvim-dap-ui
 			"nvim-neotest/nvim-nio",
 
-			-- Installs the debug adapters for you
-			"mason-org/mason.nvim",
-			"jay-babu/mason-nvim-dap.nvim",
-
 			"theHamsta/nvim-dap-virtual-text",
 		},
 		keys = {
@@ -70,22 +66,6 @@ return {
 			local dap = require("dap")
 			local dapui = require("dapui")
 
-			require("mason-nvim-dap").setup({
-				-- Makes a best effort to setup the various debuggers with
-				-- reasonable debug configurations
-				automatic_installation = true,
-
-				-- You can provide additional configuration to the handlers,
-				-- see mason-nvim-dap README for more information
-				handlers = {},
-
-				-- You'll need to check that you have the required things installed
-				-- online, please don't ask me how to install them :)
-				ensure_installed = {
-					-- Update this to ensure that you have the debuggers for the langs you want
-				},
-			})
-
 			-- Dap UI setup
 			-- For more information, see |:help nvim-dap-ui|
 			---@diagnostic disable-next-line: missing-fields
@@ -109,6 +89,29 @@ return {
 					},
 				},
 			})
+
+            dap.adapters.lldb = {
+                type = 'executable',
+                command = 'lldb-dap',
+                name = 'lldb'
+            }
+
+            dap.configurations.c = {
+                {
+                    name = 'Launch',
+                    type = 'lldb',
+                    request = 'launch',
+                    program = function()
+                    return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+                    end,
+                    cwd = '${workspaceFolder}',
+                    stopOnEntry = false,
+                    args = {},
+                }
+            }
+
+            dap.configurations.cpp = dap.configurations.c
+            dap.configurations.rust = dap.configurations.c
 
 			-- Change breakpoint icons
 			-- vim.api.nvim_set_hl(0, 'DapBreak', { fg = '#e51400' })

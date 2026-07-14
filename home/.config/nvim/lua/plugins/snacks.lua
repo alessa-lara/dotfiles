@@ -83,10 +83,12 @@ return {
 					Snacks.picker.projects({
 						dev = {
 							"~/Projects/Rust",
+							"~/Projects/C",
 							"~/Projects/C++",
 							"~/Projects/Python",
 							"~/Projects/Web",
 							"~/Documents/Markdown",
+							"~/Documents/Resume",
 						},
 						patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "package.json", "Makefile", ".root" },
 						recent = false,

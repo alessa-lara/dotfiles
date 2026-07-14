@@ -1,4 +1,4 @@
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Media/Images/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 input {
     focus-follows-mouse max-scroll-amount="33%"
