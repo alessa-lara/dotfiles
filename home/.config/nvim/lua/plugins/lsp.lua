@@ -2,6 +2,9 @@ return {
     {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
+		dependencies = {
+            "NotAShelf/direnv.nvim",
+		},
         config = function()
             vim.lsp.enable("pyright")
             vim.lsp.enable("clangd")
