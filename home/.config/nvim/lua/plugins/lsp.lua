@@ -6,7 +6,7 @@ return {
             "NotAShelf/direnv.nvim",
 		},
         config = function()
-            vim.lsp.enable("pyright")
+            vim.lsp.enable("basedpyright")
             vim.lsp.enable("clangd")
             vim.lsp.enable("rust_analyzer")
             vim.lsp.enable("lua_ls")
