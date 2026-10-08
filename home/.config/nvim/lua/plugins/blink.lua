@@ -3,37 +3,24 @@ return {
 	version = "*",
 	event = { "InsertEnter", "CmdlineEnter" },
 	opts = {
-		fuzzy = { implementation = "lua" },
-
-		keymap = { preset = "none" },
-
 		completion = {
-			menu = { draw = { treesitter = { "lsp" } } },
+			menu = {
+				auto_show = true,
+				draw = {
+					columns = {
+						{ "label", "label_description", gap = 1 },
+						{ "kind_icon", "kind" },
+					},
+				},
+			},
+
+			keyword = { range = "full" },
+			list = { selection = { preselect = false, auto_insert = true } },
+			ghost_text = { enabled = true },
 		},
 
 		sources = {
-			default = { "lsp", "path", "snippets" },
-		},
-
-		cmdline = {
-			enabled = true,
-			keymap = {
-				preset = "cmdline",
-				["<Right>"] = false,
-				["<Left>"] = false,
-			},
-
-			completion = {
-				list = { selection = { preselect = false } },
-
-				menu = {
-					auto_show = function(ctx)
-						return vim.fn.getcmdtype() == ":"
-					end,
-				},
-
-				ghost_text = { enabled = true },
-			},
+            default = { "lsp", "path", "snippets" },
 		},
 	},
 }

@@ -9,9 +9,9 @@ return {
 			map_multistep("i", "<S-Tab>", { "pmenu_prev" })
 			map_multistep("i", "<CR>", { "pmenu_accept", "minipairs_cr" })
 			map_multistep("i", "<BS>", { "minipairs_bs" })
-			map_multistep("i", "<Tab>", { "blink_next" })
-			map_multistep("i", "<S-Tab>", { "blink_prev" })
-			map_multistep("i", "<CR>", { "blink_accept" })
+			--map_multistep("i", "<Tab>", { "blink_next" })
+			--map_multistep("i", "<S-Tab>", { "blink_prev" })
+			--map_multistep("i", "<CR>", { "blink_accept" })
 
 			local map_combo = require("mini.keymap").map_combo
 
@@ -124,4 +124,12 @@ return {
 			},
 		},
 	},
+
+	{ "nvim-mini/mini.completion", version = false, lazy = false, opts = {
+      lsp_completion = {
+        source_func = "omnifunc",
+        auto_setup = true,
+      },
+
+    } },
 }

@@ -73,3 +73,5 @@ vim.o.backupdir = ".vim/tmp"
 vim.o.directory = ".vim/swp"
 
 vim.o.cursorline = true
+
+vim.o.completeopt = "menuone,noselect,fuzzy,nosort"

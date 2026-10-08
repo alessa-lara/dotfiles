@@ -25,7 +25,7 @@ return {
 			{
 				"<leader>gg",
 				function()
-					require("neogit").open({ kind = "floating" })
+					require("neogit").open()
 				end,
 				desc = "Show Neogit UI",
 			},
