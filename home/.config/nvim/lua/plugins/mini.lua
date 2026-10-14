@@ -125,11 +125,16 @@ return {
 		},
 	},
 
-	{ "nvim-mini/mini.completion", version = false, lazy = false, opts = {
-      lsp_completion = {
-        source_func = "omnifunc",
-        auto_setup = true,
-      },
+	{
+        "nvim-mini/mini.completion", version = false, lazy = false, opts = {
+            lsp_completion = {
+                source_func = "omnifunc",
+                auto_setup = true,
+            },
 
-    } },
+            delay = {
+                  completion = 25,
+            }
+        } 
+    },
 }
